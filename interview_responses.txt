@@ -33,10 +33,21 @@ puts $passed_sum
 Question here -> With the puts statement for the function, I get back each number seperately that I wish to add.  Ideally, instead of using a global variable, I would like to use the numbers that each recursive function is returning, and just add those.  Is there a way to add the results outside of the function?  I.E., if I wanted to say, do 
 "final_sum = recursive_sum_funct(summing_array)" and somehow have that add together all the recursive results.  Is that possible?  Or is it just the exact same as using a global variable since what I'm trying to add is each recursive function return, which is the number anyways?
 
-Without Recursion:
-
+Or, more simply with helper methods:
 summing_array = [1, 2, [3, 4, [5]], [6, 7], 8, 9, [10]]
 summing_array.flatten.inject{|sum, x| sum + x}
+
+Without Recursion:
+
+sum = 0
+summable_array = [1, 2, [3, 4, [5]], [6, 7], 8, 9, [10]]
+
+formatted_array = summable_array.join(" ").split(" ").each do | element |
+	sum += element.to_i
+end
+
+puts sum
+
 
 4. 
 
