@@ -1,9 +1,16 @@
 You can write your responses here!
 
-1.
+1. 
+If you can only pull fruit out randomly, then it is the number of buckets * the number of times you iterate over them until one of the buckets produces a different fruit.  Then you would have found the bucket with two types of fruit, and aleady know the contents of the other two.  If you can select to attempt to take out a certain type of fruit, for example, I want to go to bucket A and try to pull out an apple, and either fail or succeed, then you can determine the contents of the buckets in 5 draws ( or less, depending on luck ).  Check the three buckets for apples, when you fail to find an apple in one bucket, search the two other buckets for oranges.  The bucket that has an orange in it is the apple + orange bucket, the first bucket is the orange bucket, and the remaining bucket is the apple bucket.
 
-2.
+2.  
+reversing_string = ('a'..'z').to_a
+reversed_string = ''
+reversing_string.each do | k |
+    reversed_string = k + reversed_string
+end
 
-3.
+3. 
 
-4.
+
+4. 
