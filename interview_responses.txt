@@ -1,9 +1,12 @@
 You can write your responses here!
 
-1.
+1. One.
+Pick one out of the "both" box. Whichever fruit you pick, that box is filled with those fruits (lets say apples)
+ this means that the box labeled orange has to be the both box -- since it's not apples, and it can't be oranges (since it's labeled wrong) -- it must be both
+ then that means the third box is the oranges box since it's neither both -- nor oranges.
 
 2.
 
 3.
 
-4.
+4. number the jars 0-9. Take the same number of pills out of each jar as its number (e.g. take 6 pills out of jar number 6, 7 pills out of jar 7, etc...). Weigh all the pills together. What you'll have is a weight that isn't divisibile by 10 (since the contaminated pills weight less than 10 grams). the difference between what you have and the  next hightest number divisibile by ten will correspond to the number of the jar that has the contaminated pills e.g. 96 grams will correspond to jar number 4 -- because it takes four pills of weight 9 grams to result in that weight.
