@@ -1,9 +1,67 @@
 You can write your responses here!
 
-1.
+1. 
+If you can only pull fruit out randomly, then it is the number of buckets * the number of times you iterate over them until one of the buckets produces a different fruit.  Then you would have found the bucket with two types of fruit, and aleady know the contents of the other two.  If you can select to attempt to take out a certain type of fruit, for example, I want to go to bucket A and try to pull out an apple, and either fail or succeed, then you can determine the contents of the buckets in 5 draws ( or less, depending on luck ).  Check the three buckets for apples, when you fail to find an apple in one bucket, search the two other buckets for oranges.  The bucket that has an orange in it is the apple + orange bucket, the first bucket is the orange bucket, and the remaining bucket is the apple bucket.
 
-2.
+2.  
+reversing_string = ('a'..'z').to_a
+reversed_string = ''
+reversing_string.each do | k |
+    reversed_string = k + reversed_string
+end
 
-3.
+3. 
 
-4.
+With Recursion:
+
+summing_array = [1, 2, [3, 4, [5]], [6, 7], 8, 9, [10]]
+
+$passed_sum = 0
+def recursive_sum_funct(sum_array)
+	for element in sum_array do 
+		if element.kind_of?(Array)
+			recursive_sum_funct(element)
+		else
+			$passed_sum += element
+		end
+	end
+end
+
+puts recursive_sum_funct(summing_array)
+puts $passed_sum
+
+Question here -> With the puts statement for the function, I get back each number seperately that I wish to add.  Ideally, instead of using a global variable, I would like to use the numbers that each recursive function is returning, and just add those.  Is there a way to add the results outside of the function?  I.E., if I wanted to say, do 
+"final_sum = recursive_sum_funct(summing_array)" and somehow have that add together all the recursive results.  Is that possible?  Or is it just the exact same as using a global variable since what I'm trying to add is each recursive function return, which is the number anyways?
+
+Or, more simply with helper methods:
+summing_array = [1, 2, [3, 4, [5]], [6, 7], 8, 9, [10]]
+summing_array.flatten.inject{|sum, x| sum + x}
+
+Without Recursion:
+
+sum = 0
+summable_array = [1, 2, [3, 4, [5]], [6, 7], 8, 9, [10]]
+
+formatted_array = summable_array.join(" ").split(" ").each do | element |
+	sum += element.to_i
+end
+
+puts sum
+
+
+4. 
+
+Just going to construct this as arrays, considering that you don't yet know what's in the jars, do this.  Take one pill from each jar, to put on the scale, and record the order.  Treating each jar as an array with each pill being it's own array containing an integer representing the weight.  I.E.
+mystery_jar4 = [[10], [10], [10], etc...]
+
+scale = 0
+scale += mystery_jar1.pop, mystery_jar2.pop, mystery_jar3.pop, mystery_jar4.pop, etc...
+
+Take the measurement
+
+scale.index(9)
+
+The index shows which jar the contaminated pill came from.
+
+Outside of a programming construct, not sure how the scale measurement relationship makes sense.  Is it only fair to measure the sum of any collection of materials on the scale?
+
